@@ -1,16 +1,18 @@
 :root {
-  --clr-dark: 0 0 0.05;
-  --clr-light: 0.67 0.17 0.92;
-  --clr-silver: 0 0 0.65;
+  --clr-dark: 0 0% 0%;
+  --clr-light: 0 0% 92%;
+  --clr-silver: 233, 27%, 94%;
   --clr-white: 0 0% 100%;
-  --clr-blue: 0.61 1 0.5;
-  --clr-bluelight: 0.63 1 0.95;
+  --clr-blue: 218.03 100% 49.8%;
+  --clr-bluelight: 210 99% 69%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
 
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
-  --fs-600: 1rem;
-  --fs-500: 1.75rem;
+  --fs-600: 0.8rem;
+  --fs-500: 1.1rem;
   --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
@@ -23,16 +25,18 @@
   :root {
     --fs-800: 5rem;
     --fs-700: 2.5rem;
-    --fs-600: 1.5rem;
-    --fs-400: 1rem;
+    --fs-600: 1.8rem;
+    --fs-500: 1.2rem;
+    --fs-400: 0.96rem;
   }
 }
 @media (min-width: 45em) {
   :root {
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
-    --fs-600: 2rem;
-    --fs-400: 1.25rem;
+    --fs-600: 2.2rem;
+    --fs-500: 1.4rem;
+    --fs-400: 1rem;
   }
 }
 *,
@@ -61,6 +65,7 @@ h5,
 h6,
 p {
   font-weight: 400;
+  font-size: var(--fs-400);
 }
 
 body {
@@ -69,4 +74,148 @@ body {
   color: hsl(var(--clr-silver));
   line-height: 1.5;
   min-height: 100vh;
+}
+
+Link {
+  text-decoration: none;
+}
+.line-height-2 {
+  line-height: 2;
+}
+.bg-clrdark {
+  background-color: hsl(var(--clr-dark));
+}
+.bg-clrblue {
+  background-color: hsl(var(--clr-blue));
+}
+.bg-clrsilver {
+  background-color: hsl(var(--clr-silver));
+}
+.text-clrdark {
+  color: hsl(var(--clr-dark));
+}
+.text-clrlight {
+  color: hsl(var(--clr-light));
+}
+.text-blue {
+  color: hsl(var(--clr-blue));
+}
+.text-lightblue {
+  color: hsl(var(--clr-bluelight));
+}
+.text-white {
+  color: hsl(var(--clr-white));
+}
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.btn-blue {
+  background-color: hsl(var(--clr-blue));
+  border: 1px solid hsl(var(--clr-blue));
+  color: white;
+  border-radius: 20px;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-blue-outline {
+  background-color: transparent;
+  border: 2px solid hsl(var(--clr-blue));
+  color: hsl(var(--clr-blue));
+  border-radius: 20px;
+  padding: 8px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+/* .underline-indicators {
+  cursor: pointer;
+
+  border: 0;
+  padding: var(--underline-gap, 1rem) 0;
+
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+} */
+
+.underline-indicators:hover,
+.underline-indicators:focus {
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 1);
+  font-weight: 600;
+}
+
+.underline-indicators.active {
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 1);
+  font-weight: 600;
+}
+
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+.navbar .dropdown-toggle i {
+  margin-left: 0.5em;
+}
+
+.tabbable-line > .fleet-navtabs {
+  border: none;
+  margin: 0px;
+  background-color: hsl(var(--clr-blue));
+  border-radius: 20px;
+}
+.fleet-navtabs > .fleet-tab-item {
+  margin-right: 22px;
+}
+.tabbable-line,
+.fleet-navtabs,
+.fleet-tab-item > .fleet-tab-link {
+  border: 0;
+  margin-right: 0;
+  font-size: var(--fs-500);
+  letter-spacing: 0px;
+  color: hsl(var(--clr-white));
+  opacity: 1;
+}
+
+.tabbable-line > .fleet-navtabs > .fleet-tab-item.open,
+.tabbable-line > .fleet-navtabs > .fleet-tab-item:hover {
+  border-bottom: 3px solid hsl(var(--clr-white));
+}
+.fleet-navtabs .fleet-tab-item.show .fleet-tab-link,
+.fleet-navtabs .fleet-tab-link.active {
+  color: hsl(var(--clr-white)) !important;
+  background-color: transparent !important;
+  border-left: 0 !important;
+  border-right: 0;
+  border-top: 0;
+}
+
+.tabbable-line > .fleet-navtabs > .fleet-tab-item.open .dropdown-menu,
+.tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+  border: 0;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  color: white;
+  border: 0 !important;
 }
